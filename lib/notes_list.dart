@@ -21,7 +21,7 @@ class _NotesListState extends State<NotesList> {
             onPressed: () {
               setState(() {});
             },
-            child: Text("button"),
+            child: const Text("button"),
           )
         ],
       ),
