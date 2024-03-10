@@ -13,21 +13,13 @@ class _NewNoteState extends State<NewNote> {
   String inputText = "";
   late final SharedPreferences prefs;
 
-  setDB() async {
-    prefs = await SharedPreferences.getInstance();
-  }
-
-  @override
-  void initState() {
-    setDB();
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: TextField(
+          decoration: const InputDecoration(
+              border: OutlineInputBorder(), hintText: "input note"),
           onChanged: (value) async {
             dataBase = value;
             await prefs.setString("notesKey", value);

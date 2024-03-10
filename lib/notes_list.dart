@@ -18,26 +18,25 @@ class _NotesListState extends State<NotesList> {
         ),
         actions: [
           MaterialButton(
-            onPressed: () {
-              setState(() {});
-            },
-            child: const Text("button"),
-          )
+              child: const Icon(Icons.settings),
+              onPressed: () {
+                Navigator.of(context).pushNamed('/settings');
+              })
         ],
       ),
       body: ListView.separated(
-          separatorBuilder: (context, index) => const Divider(),
+          separatorBuilder: (context, index) => const Divider(height: 0),
           itemCount: 10,
           itemBuilder: (context, i) {
             String noteName = dataBase;
             return ListTile(
                 trailing: const Icon(Icons.arrow_forward_ios),
                 title: Text(
-                  noteName,
+                  "title",
                   style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 subtitle: Text(
-                  "sub",
+                  "subеtitle",
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 onTap: () {
